@@ -4,14 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-
 import { Navbar } from './navbar.component';
-
 import { IncomeTable } from './incomeTable.component';
-
 import { IncomeData } from './incomeData.service';
-
 import { IncomeForm } from './incomeForm.component';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +22,10 @@ import { IncomeForm } from './incomeForm.component';
     FormsModule,
     HttpModule
   ],
-  providers: [IncomeData],
+  providers: [
+      IncomeData,
+      LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
