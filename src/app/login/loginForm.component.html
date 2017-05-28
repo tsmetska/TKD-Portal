@@ -1,0 +1,23 @@
+<div class="card" deactivate>
+  <div class="card-content row">
+
+    <div id="login_form" class="col s12 center">
+      <div class="input-field">
+        <input [(ngModel)]="username" id="username" name="username" type="text" class="validate">
+        <label for="username">Username</label>
+      </div>
+
+      <div class="input-field">
+        <input [(ngModel)]="password" id="password" name="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+
+      <a (click)="login()" class="waves-effect waves-light btn" id="submit_button">login</a>
+    </div>
+
+    <div class="progress col s12 center" id="login_loader">
+      <div class="indeterminate"></div>
+    </div>
+
+  </div>
+</div>

@@ -1,25 +1,22 @@
-<header>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</header>
 <navbar></navbar>
 <div class="container">
 	<income-form>
 	</income-form>
-	<div *ngIf="showIncomeTable()">
-		<income-table>
-		</income-table>  
-	</div> 
 	<div class="row">
         <div class="card col s12">
-            <div class="card-content black-text">
-              <span class="card-title">Boats and Chocobos</span>
-				<p>spooghet</p>
+			<div *ngIf="!getLoginState()" class="card-action">
+				<login #loginComponent></login>
             </div>
-            <div class="card-action">
+            <div *ngIf="getLoginState()" class="card-action">
 				<a class="waves-effect waves-light btn" (click)="openModal()"><i class="material-icons left">account_balance</i>Accounting</a>
 				<a class="waves-effect waves-light btn" (click)="toggleIncomeTableVisible()"><i class="material-icons left">assessment</i>Income Report</a>
+				<logout-button></logout-button>
             </div>
         </div>
       </div>
+	<div *ngIf="getLoginState() && showIncomeTable()">
+		<income-table>
+		</income-table>
+	</div>
 </div>
 
