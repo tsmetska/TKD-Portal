@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {LoginService} from '../login/login.service';
 import {Login} from '../login/loginForm.component';
+import { IncomeData } from '../incomeData/incomeData.service';
 
 declare var $: any;
 
@@ -11,14 +12,12 @@ declare var $: any;
     styleUrls: ['app.component.css']
 })
 export class AppComponent {
-    title = 'Lawd Helpith Me';
     flag: boolean = false;
     private logged_in: boolean = false;
 
-    constructor(public loginService: LoginService) {}
+    constructor(public loginService: LoginService, public incomeData: IncomeData) {}
 
     public openModal() {
-        console.log("boop");
         $('#income-form-modal').modal('open');
     }
 
@@ -27,6 +26,7 @@ export class AppComponent {
     }
 
     public toggleIncomeTableVisible() {
+
         this.flag = !this.flag;
         return this.flag;
     }

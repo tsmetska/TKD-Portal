@@ -4,10 +4,10 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {Navbar} from '../navbar/navbar.component';
-import {IncomeTable} from '../incomeTable/incomeTable.component';
-import {IncomeData} from '../incomeData.service';
-import {IncomeForm} from '../incomeForm/incomeForm.component';
+import {Navbar} from '../navigation/navbar.component';
+import {IncomeTable} from '../incomeData/incomeTable.component';
+import {IncomeData} from '../incomeData/incomeData.service';
+import {IncomeForm} from '../incomeData/incomeForm.component';
 import {LoginService} from '../login/login.service';
 import {Login} from '../login/loginForm.component';
 import {LogoutButton} from '../login/logoutButton.component';
@@ -27,8 +27,8 @@ import {LogoutButton} from '../login/logoutButton.component';
         HttpModule
     ],
     providers: [
+        LoginService,
         IncomeData,
-        LoginService
     ],
     bootstrap: [AppComponent]
 })

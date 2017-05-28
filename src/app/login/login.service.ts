@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import {IncomeData} from '../incomeData/incomeData.service';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 declare var $: any;
@@ -31,6 +32,18 @@ export class LoginService {
         'Content-Type': 'application/x-www-form-urlencoded'
     });
 
+    getToken(){
+        return this.token
+    }
+
+    getClientID(){
+        return this.client_id
+    }
+
+    getURL(){
+        return this.url
+    }
+
     authUser(username: string, password: string): Observable<Response> {
         let data = {
             username: username,
@@ -47,9 +60,11 @@ export class LoginService {
     }
 
     setTokenData(data) {
-        console.log("Setting Token...")
+        console.log("Setting Token...");
         this.token = data['access_token'];
-        this.refresh_token = data['refresh_token']
+        this.refresh_token = data['refresh_token'];
+
+        console.log("Token: ", this.token)
 
         localStorage.setItem('current_token', this.token);
         localStorage.setItem('refresh_token', this.refresh_token);
