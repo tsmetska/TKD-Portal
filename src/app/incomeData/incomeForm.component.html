@@ -2,60 +2,46 @@
 <div id="income-form-modal" class="modal">
     <div class="modal-content">
 	<div class="row">
+	<div class="row">
 		<div class="col s1 right">
 			<a class="modal-action modal-close waves-effect waves-red btn-flat">X</a>
 		</div>
 	</div>
-		<div class="row">
-			<form class="col s12">
-			<div class="row">
-				<div class="input-field col s12">
-				  <input disabled value="WCHQ" id="disabled" type="text" class="validate">
-				  <label for="disabled">School</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<div class="input-field col s12">
-				  <input id="date" type="date" class="datepicker" name="date" [(ngModel)]="date">
-				  <label for="date">Date</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<div class="input-field col s12">
-				  <input id="check" type="text" class="validate" name="check" [(ngModel)]="check">
-				  <label for="check">Check</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<div class="input-field col s12">
-				  <input id="credit_card" type="text" class="validate" name="creditCard" [(ngModel)]="creditCard">
-				  <label for="credit_card">Credit Card</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<div class="input-field col s12">
-				  <input id="cash" type="text" class="validate" name="cash" [(ngModel)]="cash">
-				  <label for="cash">Cash</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<div class="input-field col s12">
-				  <input id="vending" type="text" class="validate" name="vending" [(ngModel)]="vending">
-				  <label for="vending">Vending</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<div class="input-field col s12">
-				  <input id="ez_payment" type="text" class="validate" name="ezPayment" [(ngModel)]="ezPayment">
-				  <label for="ez_payment">EZ Payment</label>
-				</div>
-			  </div>
-			  <div class="row">
-				<button class="btn waves-effect waves-light" type="submit" (click)="onSubmit()" name="action">Submit
-					<i class="material-icons right">send</i>
-				</button>
-			  </div>
-			</form>
+		  <div class="row">
+			<div class="input-field col s6">
+			  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+			  <label for="first_name">School</label>
+			</div>
+			<div class="input-field col s6">
+			  <input id="last_name" type="text" class="validate">
+			  <label for="last_name">Dat</label>
+			</div>
+		</div>
+		
+		
+		<ul class="collapsible" data-collapsible="accordion">
+			<li>
+			  <div class="collapsible-header"><i class="material-icons">filter_drama</i>Check</div>
+			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			  <div class="collapsible-header"><i class="material-icons">place</i>Credit Card</div>
+			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			  <div class="collapsible-header"><i class="material-icons">whatshot</i>Cash</div>
+			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			  <div class="collapsible-header"><i class="material-icons">whatshot</i>Vending</div>
+			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			  <div class="collapsible-header"><i class="material-icons">whatshot</i>EZ Payment</div>
+			  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+		  </ul>
+	
 		  </div>
 		</div>
     
