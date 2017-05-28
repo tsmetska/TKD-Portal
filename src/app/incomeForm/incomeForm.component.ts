@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 
 import {OnInit} from '@angular/core';
 
-import { IncomeData } from './incomeData.service';
+import { IncomeData } from '../incomeData.service';
 
 declare var $:any;
 
 @Component({
   selector: 'income-form',
-  templateUrl: './incomeForm.component.html'
+  templateUrl: 'incomeForm.component.html'
 })
 export class IncomeForm 
 {

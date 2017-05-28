@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
-import { IncomeData } from './incomeData.service';
+import { IncomeData } from '../incomeData.service';
 
 @Component({
   selector: 'income-table',
-  templateUrl: './incomeTable.component.html'
+  templateUrl: 'incomeTable.component.html'
 })
 export class IncomeTable {
   constructor(private incomeData: IncomeData) { }
