@@ -31,13 +31,24 @@ export class IncomeData {
     }
 
     private getIncomeData(): Observable<Response> {
-        console.log("!!!")
         this.headers.set('Content-Type', 'application/json');
         this.headers.set('Authorization', 'Bearer ' + this.token);
         console.log(this.headers)
         return this.http.get(
             this.url + 'income/',
             {headers: this.headers}
+        )
+    }
+
+    private pushIncomeData(post_data): Observable<Response> {
+        this.headers.set('Content-Type', 'application/json');
+        this.headers.set('Authorization', 'Bearer ' + this.token);
+        console.log(this.headers)
+        return this.http.post(
+            this.url + 'income/',
+            post_data,
+            {headers: this.headers,
+            withCredentials: true}
         )
     }
 
@@ -70,6 +81,22 @@ export class IncomeData {
     }
 
     public pushData(row) {
-      console.log(row);
+        var that = this;
+        this.setToken(this.loginService.getToken());
+        this.pushIncomeData(row)
+            .catch(err => {
+                console.log(err);
+                return Observable.throw(err);
+            })
+            .map(response => response.json())
+            .subscribe(
+                data => console.log(data),
+                err => function () {
+                    console.error(err);
+                },
+                {} = function () {
+                    that.requestData()
+                }
+            );
     }
 }
