@@ -19,8 +19,13 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s6">
-						<input name="school" type="text" class="validate"
-							[(ngModel)]="school"> <label for="school">School</label>
+						<select name="school" type="text" [(ngModel)]="school">
+							<option value="" disabled selected>Choose your School</option>
+							<option value="1">WCHQ</option>
+							<option value="2">WC</option>
+							<option value="3">WB</option>
+							<option value="3">FB</option>
+						</select> <label for="school">School</label>
 					</div>
 					<div class="input-field col s6">
 						<input id="datepicker" name="date" type="date" class="datepicker"
@@ -224,30 +229,52 @@
 
 					<li>
 						<div class="collapsible-header">
-							<i class="material-icons">format_align_left</i>Summary
+							<i class="material-icons">format_align_left</i>Summary & Submit
 						</div>
 						<div class="collapsible-body">
-							<span>Lorem ipsum dolor sit amet.</span>
-						</div>
-					</li>
-				</ul>
-				<div class="row">
-					<br>
-					<div class="col s3">
-						<h3>Total:</h3>
-					</div>
-					<div class="col s6">
-						<h3>$ {{getGrandTotal()}}</h3>
-					</div>
-					<div class="col s3">
-						<div class="right">
+							<div class="row">
+								<table>
+									<thead>
+										<tr>
+											<th>Check</th>
+											<th>Credit Card</th>
+											<th>Cash</th>
+											<th>Vending</th>
+											<th>EZ Payment</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td>$ {{getTotal(check)}}</td>
+											<td>$ {{getTotal(credit_card)}}</td>
+											<td>$ {{getTotal(cash)}}</td>
+											<td>$ {{getTotal(vending)}}</td>
+											<td>$ {{getTotal(ez_payment)}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row">
+								<div class="col s3">
+									<h4>Total:</h4>
+								</div>
+								<div class="col s6">
+									<h4>$ {{getGrandTotal()}}</h4>
+								</div>
+								<div class="col s3">
+									<div class="right">
 							<button class="btn waves-effect waves-light" (click)="onSubmit()"
 								type="submit" name="action">
 								Submit <i class="material-icons right">send</i>
 							</button>
 						</div>
-					</div>
-				</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
 			</div>
 		</div>
 	</div>
