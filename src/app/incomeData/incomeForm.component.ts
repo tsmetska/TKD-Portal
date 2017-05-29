@@ -33,11 +33,16 @@ export class IncomeForm {
   ngOnInit() {
     $('.datepicker').pickadate({
       container: 'body',
+      format: 'mm/dd/yyyy',
       selectMonths: true, // Creates a dropdown to control month
       selectYears: 15 // Creates a dropdown of 15 years to control year
     });
 
     $('.currency').maskMoney({ prefix: '$ ' });
+
+    $(document).ready(function() {
+      $('select').material_select();
+    });
 
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
@@ -49,15 +54,15 @@ export class IncomeForm {
     let year: string = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
     let day: string = $('.datepicker').pickadate('picker').get('highlight', 'dd');
     let month: string = $('.datepicker').pickadate('picker').get('highlight', 'mm');
-    
+
     this.incomeData.pushData({
-      school: this.school,
+      school: $('#school').val(),
       date: year + "-" + month + "-" + day,
       check: this.getTotal(this.check),
       cash: this.getTotal(this.cash),
       credit_card: this.getTotal(this.credit_card),
       vending: this.getTotal(this.vending),
-      ez_payment: this.getTotal(this.ez_payment)
+        ez_payment: this.getTotal(this.ez_payment)
     });
   }
 
