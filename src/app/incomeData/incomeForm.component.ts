@@ -52,7 +52,7 @@ export class IncomeForm {
     
     this.incomeData.pushData({
       school: this.school,
-      date: month + "-" + day + "-" + year,
+      date: year + "-" + month + "-" + day,
       check: this.getTotal(this.check),
       cash: this.getTotal(this.cash),
       credit_card: this.getTotal(this.credit_card),

@@ -2,121 +2,253 @@
 <div id="income-form-modal" class="modal"
 	style="width: 75% !important; max-height: 85% !important; overflow-x: hidden !important;">
 	<div class="modal-content">
-		<div class="row">
-			<div class="row">
-				<div class="col s1 right">
-					<a class="modal-action modal-close waves-effect waves-red btn-flat">X</a>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input name="school" type="text" class="validate" [(ngModel)]="school"> <label
-						for="school">School</label>
-				</div>
-				<div class="input-field col s6">
-					<input id="datepicker" name="date" type="date" class="datepicker" [(ngModel)]="date"> <label
-						for="date">Date</label>
-				</div>
-			</div>
 
+		<div class="card row">
 
-			<ul class="collapsible" data-collapsible="accordion">
-				<li>
-					<div class="collapsible-header">
-						<i class="material-icons">check</i>Check
+			<div class="container">
+				<div class="row">
+					<br>
+					<div class="col s11">
+						<h5>Daily Income</h5>
 					</div>
-					<div class="collapsible-body">
-						<div class="row">
-							<div class="input-field col s6">
-								<div class="row">
-									<div class="col s12">
-										<input id="check_input" name="check_input" type="text" class="currency"
-											[(ngModel)]="check_input"(keyup.enter)="submitInput(check, '#check_input')"> <label for="check_input">Input
-											Check Item</label>
+
+					<div class="col s1 right">
+						<a
+							class="modal-action modal-close waves-effect waves-red btn-flat">X</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input name="school" type="text" class="validate"
+							[(ngModel)]="school"> <label for="school">School</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="datepicker" name="date" type="date" class="datepicker"
+							[(ngModel)]="date"> <label for="date">Date</label>
+					</div>
+				</div>
+
+
+				<ul class="collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">check</i>Check
+						</div>
+						<div class="collapsible-body">
+							<div class="row">
+								<div class="input-field col s6">
+									<div class="row">
+										<div class="col s12">
+											<input id="check_input" name="check_input" type="text"
+												class="currency" [(ngModel)]="check_input"
+												(keyup.enter)="submitInput(check, '#check_input')">
+											<label for="check_input">Input Check Item</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s12">
+											<a class="waves-effect waves-light btn"
+												(click)="submitInput(check, '#check_input')"><i
+												class="material-icons right">input</i>add</a>
+										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col s12">
-										<a class="waves-effect waves-light btn"
-											(click)="submitInput(check, '#check_input')"><i class="material-icons right">input</i>add</a>
+								<div class="col s6">
+									<div class="box" *ngFor="let c of check">
+										<div class="chip">
+											{{c}} <i class="close material-icons"
+												(click)="popValue(check,c)">close</i>
+										</div>
 									</div>
+									<div class="divider"></div>
+									<br>
+									<h3>$ {{getTotal(check)}}</h3>
 								</div>
-							</div>
-							<div class="col s6">
-								<div class="box" *ngFor="let c of check">
-									<div class="chip">
-										{{c}} <i class="close material-icons" (click)="popValue(check,c)">close</i>
-									</div>
-								</div>
-								<div class="divider"></div>
-								<br>
-								<h3>$ {{getTotal(check)}}</h3>
 							</div>
 						</div>
-					</div>
-				</li>
-				<li>
-					<div class="collapsible-header">
-						<i class="material-icons">credit_card</i>Credit Card
-					</div>
-					<div class="collapsible-body">
-						<span>Lorem ipsum dolor sit amet.</span>
-					</div>
-				</li>
-				<li>
-					<div class="collapsible-header">
-						<i class="material-icons">local_atm</i>Cash
-					</div>
-					<div class="collapsible-body">
-						<input type="text" class="currency" />
-					</div>
-				</li>
-				<li>
-					<div class="collapsible-header">
-						<i class="material-icons">restaurant</i>Vending
-					</div>
-					<div class="collapsible-body">
-						<span>Lorem ipsum dolor sit amet.</span>
-					</div>
-				</li>
-				<li>
-					<div class="collapsible-header">
-						<i class="material-icons">contact_mail</i>EZ Payment
-					</div>
-					<div class="collapsible-body">
-						<span>Lorem ipsum dolor sit amet.</span>
-					</div>
-				</li>
-				<li>
-					<div class="collapsible-header">
-						<i class="material-icons">format_align_left</i>Summary
-					</div>
-					<div class="collapsible-body">
-						<span>Lorem ipsum dolor sit amet.</span>
-					</div>
-				</li>
-			</ul>
-			<div class="row">
-				<div class="col s3">
-					<div class="right">
+					</li>
+
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">credit_card</i>CreditCard
+						</div>
+						<div class="collapsible-body">
+							<div class="row">
+								<div class="input-field col s6">
+									<div class="row">
+										<div class="col s12">
+											<input id="credit_card_input" name="credit_card_input"
+												type="text" class="currency" [(ngModel)]="credit_card_input"
+												(keyup.enter)="submitInput(credit_card, '#credit_card_input')">
+											<label for="credit_card_input">Input Credit Card Item</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s12">
+											<a class="waves-effect waves-light btn"
+												(click)="submitInput(credit_card, '#credit_card_input')"><i
+												class="material-icons right">input</i>add</a>
+										</div>
+									</div>
+								</div>
+								<div class="col s6">
+									<div class="box" *ngFor="let cc of credit_card">
+										<div class="chip">
+											{{cc}} <i class="close material-icons"
+												(click)="popValue(credit_card,cc)">close</i>
+										</div>
+									</div>
+									<div class="divider"></div>
+									<br>
+									<h3>$ {{getTotal(credit_card)}}</h3>
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">local_atm</i>Cash
+						</div>
+						<div class="collapsible-body">
+							<div class="row">
+								<div class="input-field col s6">
+									<div class="row">
+										<div class="col s12">
+											<input id="cash_input" name="cash_input" type="text"
+												class="currency" [(ngModel)]="cash_input"
+												(keyup.enter)="submitInput(cash, '#cash_input')"> <label
+												for="cash_input">Input Cash Item</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s12">
+											<a class="waves-effect waves-light btn"
+												(click)="submitInput(cash, '#cash_input')"><i
+												class="material-icons right">input</i>add</a>
+										</div>
+									</div>
+								</div>
+								<div class="col s6">
+									<div class="box" *ngFor="let m of cash">
+										<div class="chip">
+											{{m}} <i class="close material-icons"
+												(click)="popValue(cash,m)">close</i>
+										</div>
+									</div>
+									<div class="divider"></div>
+									<br>
+									<h3>$ {{getTotal(cash)}}</h3>
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">restaurant</i>Vending
+						</div>
+						<div class="collapsible-body">
+							<div class="row">
+								<div class="input-field col s6">
+									<div class="row">
+										<div class="col s12">
+											<input id="vending_input" name="vending_input" type="text"
+												class="currency" [(ngModel)]="vending_input"
+												(keyup.enter)="submitInput(vending, '#vending_input')">
+											<label for="vending_input">Input Vending Item</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s12">
+											<a class="waves-effect waves-light btn"
+												(click)="submitInput(vending, '#vending_input')"><i
+												class="material-icons right">input</i>add</a>
+										</div>
+									</div>
+								</div>
+								<div class="col s6">
+									<div class="box" *ngFor="let v of vending">
+										<div class="chip">
+											{{v}} <i class="close material-icons"
+												(click)="popValue(vending,v)">close</i>
+										</div>
+									</div>
+									<div class="divider"></div>
+									<br>
+									<h3>$ {{getTotal(vending)}}</h3>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">contact_mail</i>EZ Payment
+						</div>
+						<div class="collapsible-body">
+							<div class="row">
+								<div class="input-field col s6">
+									<div class="row">
+										<div class="col s12">
+											<input id="ez_payment_input" name="ez_payment_input"
+												type="text" class="currency" [(ngModel)]="ez_payment_input"
+												(keyup.enter)="submitInput(ez_payment, '#ez_payment_input')">
+											<label for="ez_payment_input">Input EZ Payment Item</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s12">
+											<a class="waves-effect waves-light btn"
+												(click)="submitInput(ez_payment, '#ez_payment_input')"><i
+												class="material-icons right">input</i>add</a>
+										</div>
+									</div>
+								</div>
+								<div class="col s6">
+									<div class="box" *ngFor="let e of ez_payment">
+										<div class="chip">
+											{{e}} <i class="close material-icons"
+												(click)="popValue(ez_payment,e)">close</i>
+										</div>
+									</div>
+									<div class="divider"></div>
+									<br>
+									<h3>$ {{getTotal(ez_payment)}}</h3>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">format_align_left</i>Summary
+						</div>
+						<div class="collapsible-body">
+							<span>Lorem ipsum dolor sit amet.</span>
+						</div>
+					</li>
+				</ul>
+				<div class="row">
+					<br>
+					<div class="col s3">
 						<h3>Total:</h3>
 					</div>
-				</div>
-				<div class="col s3">
-					<div class="right">
+					<div class="col s6">
 						<h3>$ {{getGrandTotal()}}</h3>
 					</div>
-				</div>
-				<div class="col s6">
-					<div class="center">
-						<button class="btn waves-effect waves-light" (click)="onSubmit()" type="submit"
-						name="action">
-						Submit <i class="material-icons right">send</i>
-						</button>
+					<div class="col s3">
+						<div class="right">
+							<button class="btn waves-effect waves-light" (click)="onSubmit()"
+								type="submit" name="action">
+								Submit <i class="material-icons right">send</i>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
