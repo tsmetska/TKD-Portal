@@ -67,7 +67,7 @@
 									</div>
 									<div class="divider"></div>
 									<br>
-									<h3>$ {{getTotal(check)}}</h3>
+									<h4>$ {{getTotal(check)}}</h4>
 								</div>
 							</div>
 						</div>
@@ -105,7 +105,7 @@
 									</div>
 									<div class="divider"></div>
 									<br>
-									<h3>$ {{getTotal(credit_card)}}</h3>
+									<h4>$ {{getTotal(credit_card)}}</h4>
 								</div>
 							</div>
 						</div>
@@ -144,7 +144,7 @@
 									</div>
 									<div class="divider"></div>
 									<br>
-									<h3>$ {{getTotal(cash)}}</h3>
+									<h4>$ {{getTotal(cash)}}</h4>
 								</div>
 							</div>
 						</div>
@@ -183,7 +183,7 @@
 									</div>
 									<div class="divider"></div>
 									<br>
-									<h3>$ {{getTotal(vending)}}</h3>
+									<h4>$ {{getTotal(vending)}}</h4>
 								</div>
 							</div>
 						</div>
@@ -221,7 +221,7 @@
 									</div>
 									<div class="divider"></div>
 									<br>
-									<h3>$ {{getTotal(ez_payment)}}</h3>
+									<h4>$ {{getTotal(ez_payment)}}</h4>
 								</div>
 							</div>
 						</div>
@@ -256,25 +256,25 @@
 								</table>
 							</div>
 							<div class="row">
-								<div class="col s3">
+								<div class="col s2">
 									<h4>Total:</h4>
 								</div>
 								<div class="col s6">
 									<h4>$ {{getGrandTotal()}}</h4>
 								</div>
-								<div class="col s3">
+								<div class="col s4">
 									<div class="right">
-							<button class="btn waves-effect waves-light" (click)="onSubmit()"
-								type="submit" name="action">
-								Submit <i class="material-icons right">send</i>
-							</button>
-						</div>
+										<button class="btn waves-effect waves-light"
+											(click)="onSubmit()" type="submit" name="action">
+											Submit<i class="material-icons right">send</i>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</li>
 				</ul>
-				
+
 			</div>
 		</div>
 	</div>
