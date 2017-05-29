@@ -177,6 +177,6 @@ export class LoginService {
     }
 
     public getLoginState() {
-        return this.logged_in
+        return this.logged_in;
     }
 }
