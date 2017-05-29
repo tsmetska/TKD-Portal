@@ -24,8 +24,7 @@ export class IncomeForm {
   credit_card_input: Number = null;
   vending_input: Number = null;
   ez_payment_input: Number = null;
-  
-  total: Number = 0.00;
+
   grandTotal: Number = 0.00;
 
   constructor(private incomeData: IncomeData) {
@@ -37,11 +36,13 @@ export class IncomeForm {
       selectMonths: true, // Creates a dropdown to control month
       selectYears: 15 // Creates a dropdown of 15 years to control year
     });
-  
+
+    $('.currency').maskMoney({ prefix: '$ ' });
+
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
-    
-    $('#currency').maskMoney({prefix:'$ '});
+
+
   }
 
   public onSubmit() {
@@ -56,19 +57,35 @@ export class IncomeForm {
     });
   }
 
-  public submitInput(source, source_input) {
-    console.log("boats and chocobos");
-    source.push(source_input);
-    source_input = null;
+  public submitInput(source, source_id) {
+    console.log($(source_id).maskMoney('unmasked')[0]);
+    source.push($(source_id).maskMoney('unmasked')[0]);
+    $(source_id).val(null);
     console.log(source);
   }
-  
-  public getTotal(source)
-  {
-    for (let entry of source) 
-    {
-      this.total = this.total + entry;
+
+  public getTotal(source) {
+    var total = 0.0;
+    for (let entry of source) {
+      total = total + entry;
     }
+    return total;
+  }
+
+  public getGrandTotal() {
+    var sources = [this.check, this.cash, this.credit_card, this.ez_payment, this.vending]; 
+    var total = 0.0;
+    for(let source of sources) {
+      for (let entry of source) {
+        total = total + entry;
+      }
+    }
+    this.grandTotal = total;
+    return this.grandTotal;
+  }
+
+  public popValue(source, item) {
+    source.splice(source.indexOf(item), 1);
   }
 
 }

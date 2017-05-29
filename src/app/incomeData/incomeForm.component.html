@@ -30,7 +30,7 @@
 							<div class="input-field col s6">
 								<div class="row">
 									<div class="col s12">
-										<input name="check_input" type="text" id="currency"
+										<input id="check_input" name="check_input" type="text" class="currency"
 											[(ngModel)]="check_input"> <label for="check_input">Input
 											Check Item</label>
 									</div>
@@ -38,19 +38,19 @@
 								<div class="row">
 									<div class="col s12">
 										<a class="waves-effect waves-light btn"
-											(click)="submitInput(check, check_input)"><i class="material-icons right">input</i>add</a>
+											(click)="submitInput(check, '#check_input')"><i class="material-icons right">input</i>add</a>
 									</div>
 								</div>
 							</div>
 							<div class="col s6">
 								<div class="box" *ngFor="let c of check">
 									<div class="chip">
-										{{c}} <i class="close material-icons">close</i>
+										{{c}} <i class="close material-icons" (click)="popValue(check,c)">close</i>
 									</div>
 								</div>
 								<div class="divider"></div>
 								<br>
-								<h3>$0.00</h3>
+								<h3>$ {{getTotal(check)}}</h3>
 							</div>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 						<i class="material-icons">local_atm</i>Cash
 					</div>
 					<div class="collapsible-body">
-						<input type="text" id="currency" />
+						<input type="text" class="currency" />
 					</div>
 				</li>
 				<li>
@@ -104,7 +104,7 @@
 				</div>
 				<div class="col s3">
 					<div class="right">
-						<h3>$0.00</h3>
+						<h3>$ {{getGrandTotal()}}</h3>
 					</div>
 				</div>
 				<div class="col s6">
