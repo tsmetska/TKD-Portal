@@ -55,7 +55,7 @@ export class IncomeForm {
     let month: string = $('.datepicker').pickadate('picker').get('highlight', 'mm');
 
     this.incomeData.pushData({
-      school: this.school,
+      school: $('#school').val(),
       date: year + "-" + month + "-" + day,
       check: this.getTotal(this.check),
       cash: this.getTotal(this.cash),
