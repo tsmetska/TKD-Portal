@@ -69,7 +69,7 @@ export class IncomeData {
         this.data = data
     }
 
-    public putData(row) {
-        this.data.push(row);
+    public pushData(row) {
+      console.log(row);
     }
 }

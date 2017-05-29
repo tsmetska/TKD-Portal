@@ -46,14 +46,18 @@ export class IncomeForm {
   }
 
   public onSubmit() {
-    this.incomeData.putData({
+    let year: string = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
+    let day: string = $('.datepicker').pickadate('picker').get('highlight', 'dd');
+    let month: string = $('.datepicker').pickadate('picker').get('highlight', 'mm');
+    
+    this.incomeData.pushData({
       school: this.school,
-      date: this.date,
-      check: this.check,
-      cash: this.cash,
-      creditCard: this.credit_card,
-      vending: this.vending,
-      ezPayment: this.ez_payment
+      date: month + "-" + day + "-" + year,
+      check: this.getTotal(this.check),
+      cash: this.getTotal(this.cash),
+      credit_card: this.getTotal(this.credit_card),
+      vending: this.getTotal(this.vending),
+      ez_payment: this.getTotal(this.ez_payment)
     });
   }
 
@@ -69,19 +73,19 @@ export class IncomeForm {
     for (let entry of source) {
       total = total + entry;
     }
-    return total;
+    return total.toFixed(2);
   }
 
   public getGrandTotal() {
-    var sources = [this.check, this.cash, this.credit_card, this.ez_payment, this.vending]; 
+    var sources = [this.check, this.cash, this.credit_card, this.ez_payment, this.vending];
     var total = 0.0;
-    for(let source of sources) {
+    for (let source of sources) {
       for (let entry of source) {
         total = total + entry;
       }
     }
     this.grandTotal = total;
-    return this.grandTotal;
+    return this.grandTotal.toFixed(2);
   }
 
   public popValue(source, item) {

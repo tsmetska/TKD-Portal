@@ -10,12 +10,12 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s6">
-					<input id="first_name" type="text" class="validate"> <label
-						for="first_name">School</label>
+					<input name="school" type="text" class="validate" [(ngModel)]="school"> <label
+						for="school">School</label>
 				</div>
 				<div class="input-field col s6">
-					<input name="date" type="date" class="datepicker"> <label
-						for="last_name">Date</label>
+					<input id="datepicker" name="date" type="date" class="datepicker" [(ngModel)]="date"> <label
+						for="date">Date</label>
 				</div>
 			</div>
 
@@ -31,7 +31,7 @@
 								<div class="row">
 									<div class="col s12">
 										<input id="check_input" name="check_input" type="text" class="currency"
-											[(ngModel)]="check_input"> <label for="check_input">Input
+											[(ngModel)]="check_input"(keyup.enter)="submitInput(check, '#check_input')"> <label for="check_input">Input
 											Check Item</label>
 									</div>
 								</div>
@@ -109,7 +109,7 @@
 				</div>
 				<div class="col s6">
 					<div class="center">
-						<button class="btn waves-effect waves-light" type="submit"
+						<button class="btn waves-effect waves-light" (click)="onSubmit()" type="submit"
 						name="action">
 						Submit <i class="material-icons right">send</i>
 						</button>
