@@ -1,7 +1,14 @@
 <navbar></navbar>
+
 <div class="container">
 	<income-form>
 	</income-form>
+	<br>
+	<div class="row">
+		<div class="center col s12">
+			<img class="responsive-img" src='https://i.imgur.com/KcGJVwd.jpg'>
+		</div>
+	</div>
 	<div class="row">
         <div class="card col s12">
 			<div *ngIf="!getLoginState()" class="card-action">
@@ -10,7 +17,6 @@
             <div *ngIf="getLoginState()" class="card-action">
 				<a class="waves-effect waves-light btn" (click)="openModal()"><i class="material-icons left">account_balance</i>Accounting</a>
 				<a class="waves-effect waves-light btn" (click)="toggleIncomeTableVisible()"><i class="material-icons left">assessment</i>Income Report</a>
-				<logout-button></logout-button>
             </div>
         </div>
       </div>

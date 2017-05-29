@@ -1,22 +1,32 @@
 <!doctype html>
 <html lang="en">
-<head>
+<header>
     <meta charset="utf-8">
     <title>TKDPortal</title>
     <base href="/">
+    
+    <link href="http://plentz.github.io/jquery-maskmoney/">
+	<link href="http://igorescobar.github.io/jQuery-Mask-Plugin/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="jquery.maskMoney.js" type="text/javascript"></script>
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="client_id" content="Higrx1sePSZzuzl10M31paZv1ZWmK6OwwpAy8fw8">
-</head>
+    
+    
+</header>
+
 <style>
     body {
         display: flex;
@@ -27,16 +37,20 @@
     main {
         flex: 1 0 auto;
     }
+    }
 </style>
 <body>
 <script>
     $(document).ready(function () {
         Materialize.updateTextFields();
     });
+    $(".button-collapse").sideNav('show');
 </script>
+<main>
 <app-root>Loading...</app-root>
+</main>
 </body>
-<footer class="page-footer">
+<footer class="cyan page-footer">
     <div class="footer-copyright">
         <div class="container">
             © 2017 TKD Portal
