@@ -19,6 +19,7 @@ export class AppComponent {
 
     public openModal() {
         $('#income-form-modal').modal('open');
+      $(".button-collapse").sideNav();
     }
 
     public showIncomeTable() {

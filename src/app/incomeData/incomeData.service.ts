@@ -58,7 +58,7 @@ export class IncomeData {
     this.headers.set('Authorization', 'Bearer ' + this.token);
     console.log(this.headers)
     return this.http.put(
-      this.url + 'income/' + id,
+      this.url + 'income/' + id + '/',
       data,
       { headers: this.headers }
     )

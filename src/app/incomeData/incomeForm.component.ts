@@ -43,9 +43,7 @@ export class IncomeForm {
 
     $('.currency').maskMoney({ prefix: '$ ' });
 
-    $(document).ready(function() {
-      $('select').material_select();
-    });
+     $('select').material_select();
 
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal({ ready: function() { that.modalInit() } });
@@ -59,8 +57,8 @@ export class IncomeForm {
     let month: string = $('.datepicker').pickadate('picker').get('highlight', 'mm');
     if (this.edit_mode) {
       this.incomeData.editData(this.row_id, {
-        //school: $('#school').val(),
-        //date: year + "-" + month + "-" + day,
+        school: $('#school').val(),
+        date: year + "-" + month + "-" + day,
         check: this.getTotal(this.check),
         cash: this.getTotal(this.cash),
         credit_card: this.getTotal(this.credit_card),
@@ -116,8 +114,10 @@ export class IncomeForm {
 
     var dick_nater = this.incomeData.getEditData();
     if (dick_nater["edit_mode"]) {
-      //this.school = dick_nater["edit_data"]["school"]; 
-      //this.date = dick_nater["edit_data"]["date"];
+      this.school = dick_nater["edit_data"]["school"];
+      $('#school').val(dick_nater["edit_data"]["school"]);
+      $('select').material_select();
+      this.date = dick_nater["edit_data"]["date"];
       this.check = [dick_nater["edit_data"]["check"]];
       this.credit_card = [dick_nater["edit_data"]["credit_card"]];
       this.cash = [dick_nater["edit_data"]["cash"]];
@@ -128,7 +128,15 @@ export class IncomeForm {
 
     }
     else {
-      console.log("not edit mode");
+      this.school = null; 
+      this.date = null;
+      this.check = [];
+      this.credit_card = [];
+      this.cash = [];
+      this.vending = [];
+      this.ez_payment = [];
+      this.row_id = null;
+      this.edit_mode = false;
     }
   }
 
