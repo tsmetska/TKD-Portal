@@ -289,7 +289,7 @@ var IncomeData = (function () {
         this.headers.set('Content-Type', 'application/json');
         this.headers.set('Authorization', 'Bearer ' + this.token);
         console.log(this.headers);
-        return this.http.delete(this.url + 'income/' + id, { headers: this.headers });
+        return this.http.delete(this.url + 'income/' + id + '/', { headers: this.headers });
     };
     IncomeData.prototype.editIncomeData = function (id, data) {
         this.headers.set('Content-Type', 'application/json');
@@ -463,7 +463,6 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.openModal = function () {
         $('#income-form-modal').modal('open');
-        $(".button-collapse").sideNav();
     };
     AppComponent.prototype.showIncomeTable = function () {
         return this.flag;
