@@ -48,7 +48,7 @@ export class IncomeData {
     this.headers.set('Authorization', 'Bearer ' + this.token);
     console.log(this.headers)
     return this.http.delete(
-      this.url + 'income/' + id,
+      this.url + 'income/' + id + '/',
       { headers: this.headers }
     )
   }
