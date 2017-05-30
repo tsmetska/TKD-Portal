@@ -18,6 +18,8 @@ export class IncomeForm {
   credit_card: any[] = [];
   vending: any[] = [];
   ez_payment: any[] = [];
+  row_id: Number = null;
+  edit_mode: boolean = false;
 
   check_input: Number = null;
   cash_input: Number = null;
@@ -31,6 +33,7 @@ export class IncomeForm {
   }
 
   ngOnInit() {
+    var that = this;
     $('.datepicker').pickadate({
       container: 'body',
       format: 'mm/dd/yyyy',
@@ -45,7 +48,7 @@ export class IncomeForm {
     });
 
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
+    $('.modal').modal({ ready: function() { that.modalInit() } });
 
 
   }
@@ -54,16 +57,28 @@ export class IncomeForm {
     let year: string = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
     let day: string = $('.datepicker').pickadate('picker').get('highlight', 'dd');
     let month: string = $('.datepicker').pickadate('picker').get('highlight', 'mm');
-
-    this.incomeData.pushData({
-      school: $('#school').val(),
-      date: year + "-" + month + "-" + day,
-      check: this.getTotal(this.check),
-      cash: this.getTotal(this.cash),
-      credit_card: this.getTotal(this.credit_card),
-      vending: this.getTotal(this.vending),
+    if (this.edit_mode) {
+      this.incomeData.editData(this.row_id, {
+        //school: $('#school').val(),
+        //date: year + "-" + month + "-" + day,
+        check: this.getTotal(this.check),
+        cash: this.getTotal(this.cash),
+        credit_card: this.getTotal(this.credit_card),
+        vending: this.getTotal(this.vending),
         ez_payment: this.getTotal(this.ez_payment)
-    });
+      });
+    }
+    else {
+      this.incomeData.pushData({
+        school: $('#school').val(),
+        date: year + "-" + month + "-" + day,
+        check: this.getTotal(this.check),
+        cash: this.getTotal(this.cash),
+        credit_card: this.getTotal(this.credit_card),
+        vending: this.getTotal(this.vending),
+        ez_payment: this.getTotal(this.ez_payment)
+      });
+    }
   }
 
   public submitInput(source, source_id) {
@@ -95,6 +110,26 @@ export class IncomeForm {
 
   public popValue(source, item) {
     source.splice(source.indexOf(item), 1);
+  }
+
+  public modalInit() {
+
+    var dick_nater = this.incomeData.getEditData();
+    if (dick_nater["edit_mode"]) {
+      //this.school = dick_nater["edit_data"]["school"]; 
+      //this.date = dick_nater["edit_data"]["date"];
+      this.check = [dick_nater["edit_data"]["check"]];
+      this.credit_card = [dick_nater["edit_data"]["credit_card"]];
+      this.cash = [dick_nater["edit_data"]["cash"]];
+      this.vending = [dick_nater["edit_data"]["vending"]];
+      this.ez_payment = [dick_nater["edit_data"]["ez_payment"]];
+      this.row_id = dick_nater["edit_data"]["id"];
+      this.edit_mode = true;
+
+    }
+    else {
+      console.log("not edit mode");
+    }
   }
 
 }

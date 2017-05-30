@@ -1,28 +1,35 @@
 <div class="card col s12">
-    <table class="striped">
-        <thead>
-        <tr>
-            <th>School</th>
-            <th>Date</th>
-            <th>Check</th>
-            <th>Cash</th>
-            <th>Credit Card</th>
-            <th>Vending</th>
-            <th>EZ Payment</th>
-            <th>Total</th>
-        </tr>
-        </thead>
+	<table class="striped">
+		<thead>
+			<tr>
+				<th>Select</th>
+				<th>School</th>
+				<th>Date</th>
+				<th>Check</th>
+				<th>Cash</th>
+				<th>Credit Card</th>
+				<th>Vending</th>
+				<th>EZ Payment</th>
+				<th>Total</th>
+			</tr>
+		</thead>
 
-        <tbody>
-        <tr *ngFor="let d of getData()">
-            <td>WCHQ</td>
-            <td>{{d.date}}</td>
-            <td>{{d.check}}</td>
-            <td>{{d.cash}}</td>
-            <td>{{d.creditCard}}</td>
-            <td>{{d.vending}}</td>
-            <td>{{d.ezPayment}}</td>
-        </tr>
-        </tbody>
-    </table>
+		<tbody>
+
+			<tr *ngFor="let d of getData()">
+				<td> <i class="close material-icons"
+					(click)="deleteData(d.id)">close</i>
+					<a class="waves-effect waves-teal btn-flat"(click)="editData(d.id,d)">Edit</a></td>
+				<td>{{d.school}}</td>
+				<td>{{d.date}}</td>
+				<td>{{d.check}}</td>
+				<td>{{d.cash}}</td>
+				<td>{{d.credit_card}}</td>
+				<td>{{d.vending}}</td>
+				<td>{{d.ez_payment}}</td>
+				<td>{{d.check + d.cash + d.credit_card + d.vending +
+					d.ez_payment}}
+			</tr>
+		</tbody>
+	</table>
 </div>
