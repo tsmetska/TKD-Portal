@@ -17,9 +17,9 @@
 		<tbody>
 
 			<tr *ngFor="let d of getData()">
-				<td> <a href="#"><i class="close material-icons"
+				<td> <a><i class="close material-icons"
 					(click)="deleteData(d.id)">delete</i></a>
-					<a href="#"><i class="close material-icons"
+					<a><i class="close material-icons"
 					(click)="editData(d.id,d)">mode_edit</i></a>
 				<td>{{d.school}}</td>
 				<td>{{d.date}}</td>

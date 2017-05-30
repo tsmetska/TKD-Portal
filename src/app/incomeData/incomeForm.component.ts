@@ -43,10 +43,11 @@ export class IncomeForm {
 
     $('.currency').maskMoney({ prefix: '$ ' });
 
-     $('select').material_select();
+    $('select').material_select();
 
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal({ ready: function() { that.modalInit() } });
+    $('.modal').modal({ ready: function() { that.modalInit() },
+    complete: function() {that.modalTearDown()}});
 
 
   }
@@ -111,7 +112,7 @@ export class IncomeForm {
   }
 
   public modalInit() {
-
+    console.log("test");
     var dick_nater = this.incomeData.getEditData();
     if (dick_nater["edit_mode"]) {
       this.school = dick_nater["edit_data"]["school"];
@@ -128,7 +129,7 @@ export class IncomeForm {
 
     }
     else {
-      this.school = null; 
+      this.school = null;
       this.date = null;
       this.check = [];
       this.credit_card = [];
@@ -138,6 +139,18 @@ export class IncomeForm {
       this.row_id = null;
       this.edit_mode = false;
     }
+  }
+
+  public modalTearDown() {
+    this.school = null;
+    this.date = null;
+    this.check = [];
+    this.credit_card = [];
+    this.cash = [];
+    this.vending = [];
+    this.ez_payment = [];
+    this.row_id = null;
+    this.edit_mode = false;
   }
 
 }
