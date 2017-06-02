@@ -172,6 +172,8 @@ export class IncomeData {
     this.edit_id = id;
     this.edit_data = data;
     this.edit_mode=true;
+    $('#income-form-modal').modal('open');
+    console.log(this.edit_mode, " = boop");
   }
   
   public getEditData(){
@@ -180,6 +182,10 @@ export class IncomeData {
       edit_data: this.edit_data,
       edit_mode: this.edit_mode
     }
-  
+    }
+    
+    
+  public setEditModeFalse(){
+      this.edit_mode = false;
   }
 }

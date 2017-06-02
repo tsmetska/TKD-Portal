@@ -20,7 +20,7 @@
 				<div class="row">
 					<div class="input-field col s6">
 						<select id="school" name="school" type="text" [(ngModel)]="school">
-							<option value="" disabled selected>Choose your School</option>
+							<option value="1" disabled selected>Choose your School</option>
 							<option value="WCHQ">WCHQ</option>
 							<option value="WC">WC</option>
 							<option value="WB">WB</option>
@@ -264,7 +264,7 @@
 								</div>
 								<div class="col s4">
 									<div class="right">
-										<button class="btn waves-effect waves-light"
+										<button class="modal-action modal-close btn waves-effect waves-light"
 											(click)="onSubmit()" type="submit" name="action">
 											Submit<i class="material-icons right">send</i>
 										</button>

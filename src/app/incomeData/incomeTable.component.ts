@@ -22,7 +22,7 @@ export class IncomeTable {
   
   public editData(id,data){
     this.incomeData.setEditData(id,data);
-    $('#income-form-modal').modal('open');
+    //$('#income-form-modal').modal('open');
 }
   
   

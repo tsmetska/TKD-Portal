@@ -112,9 +112,9 @@ export class IncomeForm {
   }
 
   public modalInit() {
-    console.log("test");
     var dick_nater = this.incomeData.getEditData();
     if (dick_nater["edit_mode"]) {
+      console.log("edit mode");
       this.school = dick_nater["edit_data"]["school"];
       $('#school').val(dick_nater["edit_data"]["school"]);
       $('select').material_select();
@@ -129,7 +129,8 @@ export class IncomeForm {
 
     }
     else {
-      this.school = null;
+      console.log("not edit mode");
+      this.school = $('#school');
       this.date = null;
       this.check = [];
       this.credit_card = [];

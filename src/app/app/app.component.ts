@@ -18,6 +18,7 @@ export class AppComponent {
     constructor(public loginService: LoginService, public incomeData: IncomeData) {}
 
     public openModal() {
+        this.incomeData.setEditModeFalse();
         $('#income-form-modal').modal('open');
     }
 
@@ -32,6 +33,6 @@ export class AppComponent {
     }
 
     public getLoginState() {
-        return this.loginService.getLoginState()
+        return this.loginService.getLoginState();
     }
 }
