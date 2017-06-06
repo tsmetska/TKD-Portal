@@ -28,6 +28,8 @@ export class IncomeForm {
   ez_payment_input: Number = null;
 
   grandTotal: Number = 0.00;
+  
+  
 
   constructor(private incomeData: IncomeData) {
   }

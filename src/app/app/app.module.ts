@@ -11,6 +11,7 @@ import {IncomeForm} from '../incomeData/incomeForm.component';
 import {LoginService} from '../login/login.service';
 import {Login} from '../login/loginForm.component';
 import {LogoutButton} from '../login/logoutButton.component';
+import {IncomeChart} from '../incomeData/incomeChart.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import {LogoutButton} from '../login/logoutButton.component';
         IncomeTable,
         IncomeForm,
         Login,
-        LogoutButton
+        LogoutButton,
+        IncomeChart
     ],
     imports: [
         BrowserModule,
