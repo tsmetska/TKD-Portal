@@ -12,6 +12,7 @@ import {LoginService} from '../login/login.service';
 import {Login} from '../login/loginForm.component';
 import {LogoutButton} from '../login/logoutButton.component';
 import {IncomeChart} from '../incomeData/incomeChart.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import {IncomeChart} from '../incomeData/incomeChart.component';
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        ChartsModule
     ],
     providers: [
         LoginService,

@@ -1,70 +1,17 @@
 webpackJsonp([1,4],{
 
-/***/ 144:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(48)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 145:
-/***/ (function(module, exports) {
-
-module.exports = "<navbar></navbar>\r\n\r\n<div class=\"container\">\r\n\t<income-form>\r\n\t</income-form>\r\n\t<br>\r\n\t\r\n\t<div class=\"row\">\r\n\t\t<div class=\"center col s12\">\r\n\t\t\t<img class=\"responsive-img\" src='https://i.imgur.com/KcGJVwd.jpg'>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"row\">\r\n        <div class=\"card col s12\">\r\n\t\t\t<div *ngIf=\"!getLoginState()\" class=\"card-action\">\r\n\t\t\t\t<login #loginComponent></login>\r\n            </div>\r\n            <div *ngIf=\"getLoginState()\" class=\"card-action\">\r\n\t\t\t\t<a class=\"waves-effect waves-light btn\" (click)=\"openModal()\"><i class=\"material-icons left\">account_balance</i>Accounting</a>\r\n\t\t\t\t<a class=\"waves-effect waves-light btn\" (click)=\"toggleIncomeTableVisible()\"><i class=\"material-icons left\">assessment</i>Income Report</a>\r\n            </div>\r\n        </div>\r\n      </div>\r\n\t<div *ngIf=\"getLoginState() && showIncomeTable()\">\r\n\t\t<income-table>\r\n\t\t</income-table>\r\n\t</div>\r\n</div>\r\n\r\n"
-
-/***/ }),
-
-/***/ 146:
-/***/ (function(module, exports) {
-
-module.exports = "<canvas id=\"myChart\" width=\"400\" height=\"400\"></canvas>\r\n<script src=\"path/to/chartjs/dist/Chart.js\"></script>\r\n<script>\r\nvar ctx = document.getElementById(\"myChart\").getContext('2d');\r\nvar myChart = new Chart(ctx, {\r\n    type: 'bar',\r\n    data: {\r\n        labels: [\"Red\", \"Blue\", \"Yellow\", \"Green\", \"Purple\", \"Orange\"],\r\n        datasets: [{\r\n            label: '# of Votes',\r\n            data: [12, 19, 3, 5, 2, 3],\r\n            backgroundColor: [\r\n                'rgba(255, 99, 132, 0.2)',\r\n                'rgba(54, 162, 235, 0.2)',\r\n                'rgba(255, 206, 86, 0.2)',\r\n                'rgba(75, 192, 192, 0.2)',\r\n                'rgba(153, 102, 255, 0.2)',\r\n                'rgba(255, 159, 64, 0.2)'\r\n            ],\r\n            borderColor: [\r\n                'rgba(255,99,132,1)',\r\n                'rgba(54, 162, 235, 1)',\r\n                'rgba(255, 206, 86, 1)',\r\n                'rgba(75, 192, 192, 1)',\r\n                'rgba(153, 102, 255, 1)',\r\n                'rgba(255, 159, 64, 1)'\r\n            ],\r\n            borderWidth: 1\r\n        }]\r\n    },\r\n    options: {\r\n        scales: {\r\n            yAxes: [{\r\n                ticks: {\r\n                    beginAtZero:true\r\n                }\r\n            }]\r\n        }\r\n    }\r\n});\r\n</script>"
-
-/***/ }),
-
-/***/ 147:
-/***/ (function(module, exports) {
-
-module.exports = "\r\n<div id=\"income-form-modal\" class=\"modal\"\r\n\tstyle=\"width: 75% !important; max-height: 85% !important; overflow-x: hidden !important;\">\r\n\t<div class=\"modal-content\">\r\n\r\n\t\t<div class=\"card row\">\r\n\r\n\t\t\t<div class=\"container\">\r\n\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t<br>\r\n\t\t\t\t\t<div class=\"col s11\">\r\n\t\t\t\t\t\t<h5>Daily Income</h5>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"col s1 right\">\r\n\t\t\t\t\t\t<a\r\n\t\t\t\t\t\t\tclass=\"modal-action modal-close waves-effect waves-red btn-flat\">X</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t<select id=\"school\" name=\"school\" type=\"text\" [(ngModel)]=\"school\">\r\n\t\t\t\t\t\t\t<option value=\"1\" disabled selected>Choose your School</option>\r\n\t\t\t\t\t\t\t<option value=\"WCHQ\">WCHQ</option>\r\n\t\t\t\t\t\t\t<option value=\"WC\">WC</option>\r\n\t\t\t\t\t\t\t<option value=\"WB\">WB</option>\r\n\t\t\t\t\t\t\t<option value=\"FB\">FB</option>\r\n\t\t\t\t\t\t\t<option value=\"Test\">Test</option>\r\n\t\t\t\t\t\t</select> <label for=\"school\">School</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t<input placeholder=\"\" id=\"datepicker\" name=\"date\" type=\"date\" class=\"datepicker\"\r\n\t\t\t\t\t\t\t[(ngModel)]=\"date\"> <label for=\"date\">Date</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t<ul class=\"collapsible\" data-collapsible=\"accordion\">\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">check</i>Check\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"check_input\" name=\"check_input\" type=\"text\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"currency\" [(ngModel)]=\"check_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(check, '#check_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"check_input\">Input Check Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(check, '#check_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let c of check\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{c}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(check,c)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(check)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">credit_card</i>CreditCard\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"credit_card_input\" name=\"credit_card_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\ttype=\"text\" class=\"currency\" [(ngModel)]=\"credit_card_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(credit_card, '#credit_card_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"credit_card_input\">Input Credit Card Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(credit_card, '#credit_card_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let cc of credit_card\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{cc}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(credit_card,cc)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(credit_card)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">local_atm</i>Cash\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"cash_input\" name=\"cash_input\" type=\"text\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"currency\" [(ngModel)]=\"cash_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(cash, '#cash_input')\"> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\tfor=\"cash_input\">Input Cash Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(cash, '#cash_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let m of cash\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{m}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(cash,m)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(cash)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">restaurant</i>Vending\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"vending_input\" name=\"vending_input\" type=\"text\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"currency\" [(ngModel)]=\"vending_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(vending, '#vending_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"vending_input\">Input Vending Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(vending, '#vending_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let v of vending\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{v}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(vending,v)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(vending)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">contact_mail</i>EZ Payment\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"ez_payment_input\" name=\"ez_payment_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\ttype=\"text\" class=\"currency\" [(ngModel)]=\"ez_payment_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(ez_payment, '#ez_payment_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"ez_payment_input\">Input EZ Payment Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(ez_payment, '#ez_payment_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let e of ez_payment\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{e}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(ez_payment,e)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(ez_payment)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">format_align_left</i>Summary & Submit\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\" >\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<table>\r\n\t\t\t\t\t\t\t\t\t<thead>\r\n\t\t\t\t\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Check</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Credit Card</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Cash</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Vending</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>EZ Payment</th>\r\n\t\t\t\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t\t\t\t</thead>\r\n\r\n\t\t\t\t\t\t\t\t\t<tbody>\r\n\t\t\t\t\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(check)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(credit_card)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(cash)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(vending)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(ez_payment)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t\t\t\t</tbody>\r\n\t\t\t\t\t\t\t\t</table>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"col s2\">\r\n\t\t\t\t\t\t\t\t\t<h4>Total:</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getGrandTotal()}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s4\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"right\">\r\n\t\t\t\t\t\t\t\t\t\t<button class=\"modal-action modal-close btn waves-effect waves-light\"\r\n\t\t\t\t\t\t\t\t\t\t\t(click)=\"onSubmit()\" type=\"submit\" name=\"action\">\r\n\t\t\t\t\t\t\t\t\t\t\tSubmit<i class=\"material-icons right\">send</i>\r\n\t\t\t\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n</div>"
-
-/***/ }),
-
-/***/ 148:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"card col s12\">\n\t<table class=\"striped\">\n\t\t<thead>\n\t\t\t<tr>\n\t\t\t\t<th>Select</th>\n\t\t\t\t<th>School</th>\n\t\t\t\t<th>Date</th>\n\t\t\t\t<th>Check</th>\n\t\t\t\t<th>Cash</th>\n\t\t\t\t<th>Credit Card</th>\n\t\t\t\t<th>Vending</th>\n\t\t\t\t<th>EZ Payment</th>\n\t\t\t\t<th>Total</th>\n\t\t\t</tr>\n\t\t</thead>\n\n\t\t<tbody>\n\n\t\t\t<tr *ngFor=\"let d of getData()\">\n\t\t\t\t<td> <a><i class=\"close material-icons\"\n\t\t\t\t\t(click)=\"deleteData(d.id)\">delete</i></a>\n\t\t\t\t\t<a><i class=\"close material-icons\"\n\t\t\t\t\t(click)=\"editData(d.id,d)\">mode_edit</i></a>\n\t\t\t\t<td>{{d.school}}</td>\n\t\t\t\t<td>{{d.date}}</td>\n\t\t\t\t<td>{{d.check}}</td>\n\t\t\t\t<td>{{d.cash}}</td>\n\t\t\t\t<td>{{d.credit_card}}</td>\n\t\t\t\t<td>{{d.vending}}</td>\n\t\t\t\t<td>{{d.ez_payment}}</td>\n\t\t\t\t<td>{{d.check + d.cash + d.credit_card + d.vending +\n\t\t\t\t\td.ez_payment}}\n\t\t\t</tr>\n\t\t</tbody>\n\t</table>\n</div>"
-
-/***/ }),
-
-/***/ 149:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"card\" deactivate>\n  <div class=\"card-content row\">\n\n    <div id=\"login_form\" class=\"col s12 center\">\n      <div class=\"input-field\">\n        <input [(ngModel)]=\"username\" id=\"username\" name=\"username\" type=\"text\" class=\"validate\">\n        <label for=\"username\">Username</label>\n      </div>\n\n      <div class=\"input-field\">\n        <input [(ngModel)]=\"password\" id=\"password\" name=\"password\" type=\"password\" class=\"validate\">\n        <label for=\"password\">Password</label>\n      </div>\n\n      <a (click)=\"login()\" class=\"waves-effect waves-light btn\" id=\"submit_button\">login</a>\n    </div>\n\n    <div class=\"progress col s12 center\" id=\"login_loader\">\n      <div class=\"indeterminate\"></div>\n    </div>\n\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ 15:
+/***/ 16:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login_service__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IncomeData; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -217,7 +164,7 @@ var IncomeData = (function () {
     return IncomeData;
 }());
 IncomeData = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__login_login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__login_login_service__["a" /* LoginService */]) === "function" && _b || Object])
 ], IncomeData);
 
@@ -226,31 +173,17 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 150:
-/***/ (function(module, exports) {
-
-module.exports = "<a class=\"waves-effect waves-light btn\" (click)=\"logout()\">logout</a>"
-
-/***/ }),
-
-/***/ 151:
-/***/ (function(module, exports) {
-
-module.exports = "<nav>\r\n    <div class=\"cyan nav-wrapper\">\r\n      <a href=\"#\" class=\"brand-logo\">TKD Portal</a>\r\n      <ul id=\"nav-mobile\" class=\"button-collapse right hide-on-med-and-down\">\r\n        <li><logout-button></logout-button></li>\r\n      </ul>\r\n    </div>\r\n  </nav>"
-
-/***/ }),
-
-/***/ 16:
+/***/ 17:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -394,7 +327,7 @@ var LoginService = (function () {
     return LoginService;
 }());
 LoginService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], LoginService);
 
@@ -403,15 +336,7 @@ var _a;
 
 /***/ }),
 
-/***/ 176:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(76);
-
-
-/***/ }),
-
-/***/ 75:
+/***/ 192:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -420,39 +345,39 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 75;
+webpackEmptyContext.id = 192;
 
 
 /***/ }),
 
-/***/ 76:
+/***/ 193:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_app_module__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_app_module__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(207);
 
 
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
 
-/***/ 82:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__incomeData_incomeData_service__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login_service__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__incomeData_incomeData_service__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -490,10 +415,10 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(145),
-        styles: [__webpack_require__(144)]
+        template: __webpack_require__(312),
+        styles: [__webpack_require__(308)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__login_login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__login_login_service__["a" /* LoginService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__incomeData_incomeData_service__["a" /* IncomeData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__incomeData_incomeData_service__["a" /* IncomeData */]) === "function" && _b || Object])
 ], AppComponent);
@@ -503,23 +428,25 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 83:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navbar_component__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__incomeData_incomeTable_component__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__incomeData_incomeData_service__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__incomeData_incomeForm_component__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login_login_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_loginForm_component__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__login_logoutButton_component__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__incomeData_incomeChart_component__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navbar_component__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__incomeData_incomeTable_component__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__incomeData_incomeData_service__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__incomeData_incomeForm_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login_login_service__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_loginForm_component__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__login_logoutButton_component__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__incomeData_incomeChart_component__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_charts__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_charts__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -540,13 +467,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_5__navigation_navbar_component__["a" /* Navbar */],
@@ -559,7 +487,8 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_13_ng2_charts__["ChartsModule"]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_9__login_login_service__["a" /* LoginService */],
@@ -573,12 +502,12 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 84:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__incomeData_service__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__incomeData_service__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IncomeChart; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -594,17 +523,71 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var IncomeChart = (function () {
     function IncomeChart(incomeData) {
         this.incomeData = incomeData;
+        this.allData = this.incomeData.getData();
+        // lineChart
+        this.lineChartData = [
+            { data: [565, 59, 80, 81, 56,], label: 'WCHQ' },
+            { data: [28, 48, 40, 19, 86], label: 'WC' },
+            { data: [18, 48, 77, 9, 100], label: 'FB' },
+            { data: [77, 33, 1, 2, 60], label: 'WB' }
+        ];
+        this.lineChartLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        this.lineChartOptions = {
+            responsive: true
+        };
+        this.lineChartColors = [
+            {
+                backgroundColor: 'rgba(148,159,177,0.2)',
+                borderColor: 'rgba(148,159,177,1)',
+                pointBackgroundColor: 'rgba(148,159,177,1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+            },
+            {
+                backgroundColor: 'rgba(77,83,96,0.2)',
+                borderColor: 'rgba(77,83,96,1)',
+                pointBackgroundColor: 'rgba(77,83,96,1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(77,83,96,1)'
+            },
+            {
+                backgroundColor: 'rgba(148,159,177,0.2)',
+                borderColor: 'rgba(148,159,177,1)',
+                pointBackgroundColor: 'rgba(148,159,177,1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+            }
+        ];
+        this.lineChartLegend = true;
+        this.lineChartType = 'line';
         this.incomeData.requestData();
     }
-    IncomeChart.prototype.getData = function () {
-        return this.incomeData.getData();
+    IncomeChart.prototype.randomize = function () {
+        var _lineChartData = new Array(this.lineChartData.length);
+        for (var i = 0; i < this.lineChartData.length; i++) {
+            _lineChartData[i] = { data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label };
+            for (var j = 0; j < this.lineChartData[i].data.length; j++) {
+                _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
+            }
+        }
+        this.lineChartData = _lineChartData;
+    };
+    // events
+    IncomeChart.prototype.chartClicked = function (e) {
+        console.log(e);
+    };
+    IncomeChart.prototype.chartHovered = function (e) {
+        console.log(e);
     };
     return IncomeChart;
 }());
 IncomeChart = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'income-chart',
-        template: __webpack_require__(146)
+        template: __webpack_require__(313)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__incomeData_service__["a" /* IncomeData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__incomeData_service__["a" /* IncomeData */]) === "function" && _a || Object])
 ], IncomeChart);
@@ -614,12 +597,12 @@ var _a;
 
 /***/ }),
 
-/***/ 85:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__incomeData_service__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__incomeData_service__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IncomeForm; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -765,9 +748,9 @@ var IncomeForm = (function () {
     return IncomeForm;
 }());
 IncomeForm = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'income-form',
-        template: __webpack_require__(147)
+        template: __webpack_require__(314)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__incomeData_service__["a" /* IncomeData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__incomeData_service__["a" /* IncomeData */]) === "function" && _a || Object])
 ], IncomeForm);
@@ -777,12 +760,12 @@ var _a;
 
 /***/ }),
 
-/***/ 86:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__incomeData_service__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__incomeData_service__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IncomeTable; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -813,9 +796,9 @@ var IncomeTable = (function () {
     return IncomeTable;
 }());
 IncomeTable = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'income-table',
-        template: __webpack_require__(148)
+        template: __webpack_require__(315)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__incomeData_service__["a" /* IncomeData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__incomeData_service__["a" /* IncomeData */]) === "function" && _a || Object])
 ], IncomeTable);
@@ -825,13 +808,13 @@ var _a;
 
 /***/ }),
 
-/***/ 87:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_service__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -895,9 +878,9 @@ var Login = (function () {
     return Login;
 }());
 Login = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'login',
-        template: __webpack_require__(149),
+        template: __webpack_require__(316),
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__login_service__["a" /* LoginService */]) === "function" && _a || Object])
 ], Login);
@@ -907,13 +890,13 @@ var _a;
 
 /***/ }),
 
-/***/ 88:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_service__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutButton; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -938,9 +921,9 @@ var LogoutButton = (function () {
     return LogoutButton;
 }());
 LogoutButton = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'logout-button',
-        template: __webpack_require__(150),
+        template: __webpack_require__(317),
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__login_service__["a" /* LoginService */]) === "function" && _a || Object])
 ], LogoutButton);
@@ -950,11 +933,11 @@ var _a;
 
 /***/ }),
 
-/***/ 89:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Navbar; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -973,9 +956,9 @@ var Navbar = (function () {
     return Navbar;
 }());
 Navbar = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'navbar',
-        template: __webpack_require__(151)
+        template: __webpack_require__(318)
     })
 ], Navbar);
 
@@ -983,7 +966,7 @@ Navbar = __decorate([
 
 /***/ }),
 
-/***/ 90:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -998,7 +981,336 @@ var environment = {
 };
 //# sourceMappingURL=environment.js.map
 
+/***/ }),
+
+/***/ 308:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(49)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 309:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 67,
+	"./af.js": 67,
+	"./ar": 74,
+	"./ar-dz": 68,
+	"./ar-dz.js": 68,
+	"./ar-kw": 69,
+	"./ar-kw.js": 69,
+	"./ar-ly": 70,
+	"./ar-ly.js": 70,
+	"./ar-ma": 71,
+	"./ar-ma.js": 71,
+	"./ar-sa": 72,
+	"./ar-sa.js": 72,
+	"./ar-tn": 73,
+	"./ar-tn.js": 73,
+	"./ar.js": 74,
+	"./az": 75,
+	"./az.js": 75,
+	"./be": 76,
+	"./be.js": 76,
+	"./bg": 77,
+	"./bg.js": 77,
+	"./bn": 78,
+	"./bn.js": 78,
+	"./bo": 79,
+	"./bo.js": 79,
+	"./br": 80,
+	"./br.js": 80,
+	"./bs": 81,
+	"./bs.js": 81,
+	"./ca": 82,
+	"./ca.js": 82,
+	"./cs": 83,
+	"./cs.js": 83,
+	"./cv": 84,
+	"./cv.js": 84,
+	"./cy": 85,
+	"./cy.js": 85,
+	"./da": 86,
+	"./da.js": 86,
+	"./de": 89,
+	"./de-at": 87,
+	"./de-at.js": 87,
+	"./de-ch": 88,
+	"./de-ch.js": 88,
+	"./de.js": 89,
+	"./dv": 90,
+	"./dv.js": 90,
+	"./el": 91,
+	"./el.js": 91,
+	"./en-au": 92,
+	"./en-au.js": 92,
+	"./en-ca": 93,
+	"./en-ca.js": 93,
+	"./en-gb": 94,
+	"./en-gb.js": 94,
+	"./en-ie": 95,
+	"./en-ie.js": 95,
+	"./en-nz": 96,
+	"./en-nz.js": 96,
+	"./eo": 97,
+	"./eo.js": 97,
+	"./es": 99,
+	"./es-do": 98,
+	"./es-do.js": 98,
+	"./es.js": 99,
+	"./et": 100,
+	"./et.js": 100,
+	"./eu": 101,
+	"./eu.js": 101,
+	"./fa": 102,
+	"./fa.js": 102,
+	"./fi": 103,
+	"./fi.js": 103,
+	"./fo": 104,
+	"./fo.js": 104,
+	"./fr": 107,
+	"./fr-ca": 105,
+	"./fr-ca.js": 105,
+	"./fr-ch": 106,
+	"./fr-ch.js": 106,
+	"./fr.js": 107,
+	"./fy": 108,
+	"./fy.js": 108,
+	"./gd": 109,
+	"./gd.js": 109,
+	"./gl": 110,
+	"./gl.js": 110,
+	"./gom-latn": 111,
+	"./gom-latn.js": 111,
+	"./he": 112,
+	"./he.js": 112,
+	"./hi": 113,
+	"./hi.js": 113,
+	"./hr": 114,
+	"./hr.js": 114,
+	"./hu": 115,
+	"./hu.js": 115,
+	"./hy-am": 116,
+	"./hy-am.js": 116,
+	"./id": 117,
+	"./id.js": 117,
+	"./is": 118,
+	"./is.js": 118,
+	"./it": 119,
+	"./it.js": 119,
+	"./ja": 120,
+	"./ja.js": 120,
+	"./jv": 121,
+	"./jv.js": 121,
+	"./ka": 122,
+	"./ka.js": 122,
+	"./kk": 123,
+	"./kk.js": 123,
+	"./km": 124,
+	"./km.js": 124,
+	"./kn": 125,
+	"./kn.js": 125,
+	"./ko": 126,
+	"./ko.js": 126,
+	"./ky": 127,
+	"./ky.js": 127,
+	"./lb": 128,
+	"./lb.js": 128,
+	"./lo": 129,
+	"./lo.js": 129,
+	"./lt": 130,
+	"./lt.js": 130,
+	"./lv": 131,
+	"./lv.js": 131,
+	"./me": 132,
+	"./me.js": 132,
+	"./mi": 133,
+	"./mi.js": 133,
+	"./mk": 134,
+	"./mk.js": 134,
+	"./ml": 135,
+	"./ml.js": 135,
+	"./mr": 136,
+	"./mr.js": 136,
+	"./ms": 138,
+	"./ms-my": 137,
+	"./ms-my.js": 137,
+	"./ms.js": 138,
+	"./my": 139,
+	"./my.js": 139,
+	"./nb": 140,
+	"./nb.js": 140,
+	"./ne": 141,
+	"./ne.js": 141,
+	"./nl": 143,
+	"./nl-be": 142,
+	"./nl-be.js": 142,
+	"./nl.js": 143,
+	"./nn": 144,
+	"./nn.js": 144,
+	"./pa-in": 145,
+	"./pa-in.js": 145,
+	"./pl": 146,
+	"./pl.js": 146,
+	"./pt": 148,
+	"./pt-br": 147,
+	"./pt-br.js": 147,
+	"./pt.js": 148,
+	"./ro": 149,
+	"./ro.js": 149,
+	"./ru": 150,
+	"./ru.js": 150,
+	"./sd": 151,
+	"./sd.js": 151,
+	"./se": 152,
+	"./se.js": 152,
+	"./si": 153,
+	"./si.js": 153,
+	"./sk": 154,
+	"./sk.js": 154,
+	"./sl": 155,
+	"./sl.js": 155,
+	"./sq": 156,
+	"./sq.js": 156,
+	"./sr": 158,
+	"./sr-cyrl": 157,
+	"./sr-cyrl.js": 157,
+	"./sr.js": 158,
+	"./ss": 159,
+	"./ss.js": 159,
+	"./sv": 160,
+	"./sv.js": 160,
+	"./sw": 161,
+	"./sw.js": 161,
+	"./ta": 162,
+	"./ta.js": 162,
+	"./te": 163,
+	"./te.js": 163,
+	"./tet": 164,
+	"./tet.js": 164,
+	"./th": 165,
+	"./th.js": 165,
+	"./tl-ph": 166,
+	"./tl-ph.js": 166,
+	"./tlh": 167,
+	"./tlh.js": 167,
+	"./tr": 168,
+	"./tr.js": 168,
+	"./tzl": 169,
+	"./tzl.js": 169,
+	"./tzm": 171,
+	"./tzm-latn": 170,
+	"./tzm-latn.js": 170,
+	"./tzm.js": 171,
+	"./uk": 172,
+	"./uk.js": 172,
+	"./ur": 173,
+	"./ur.js": 173,
+	"./uz": 175,
+	"./uz-latn": 174,
+	"./uz-latn.js": 174,
+	"./uz.js": 175,
+	"./vi": 176,
+	"./vi.js": 176,
+	"./x-pseudo": 177,
+	"./x-pseudo.js": 177,
+	"./yo": 178,
+	"./yo.js": 178,
+	"./zh-cn": 179,
+	"./zh-cn.js": 179,
+	"./zh-hk": 180,
+	"./zh-hk.js": 180,
+	"./zh-tw": 181,
+	"./zh-tw.js": 181
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 309;
+
+
+/***/ }),
+
+/***/ 312:
+/***/ (function(module, exports) {
+
+module.exports = "<navbar></navbar>\r\n\r\n<div class=\"container\">\r\n\t\r\n\t<income-form>\r\n\t</income-form>\r\n\t<br>\r\n\t\r\n\t<div class=\"row\">\r\n\t\t<div class=\"center col s12\">\r\n\t\t\t<img class=\"responsive-img\" src='https://i.imgur.com/KcGJVwd.jpg'>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"row\">\r\n        <div class=\"card col s12\">\r\n\t\t\t<div *ngIf=\"!getLoginState()\" class=\"card-action\">\r\n\t\t\t\t<login #loginComponent></login>\r\n            </div>\r\n            <div *ngIf=\"getLoginState()\" class=\"card-action\">\r\n\t\t\t\t<a class=\"waves-effect waves-light btn\" (click)=\"openModal()\"><i class=\"material-icons left\">account_balance</i>Accounting</a>\r\n\t\t\t\t<a class=\"waves-effect waves-light btn\" (click)=\"toggleIncomeTableVisible()\"><i class=\"material-icons left\">assessment</i>Income Report</a>\r\n            </div>\r\n        </div>\r\n      </div>\r\n\t<div *ngIf=\"getLoginState() && showIncomeTable()\">\r\n\t\t<income-table>\r\n\t\t</income-table>\r\n\t</div>\r\n</div>\r\n\r\n"
+
+/***/ }),
+
+/***/ 313:
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<div class=\"card\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-md-6\">\r\n\t\t\t\t<div style=\"display: block;\">\r\n\t\t\t\t\t<canvas baseChart width=\"200\" height=\"200\"\r\n\t\t\t\t\t\t[datasets]=\"lineChartData\" [labels]=\"lineChartLabels\"\r\n\t\t\t\t\t\t[options]=\"lineChartOptions\" [colors]=\"lineChartColors\"\r\n\t\t\t\t\t\t[legend]=\"lineChartLegend\" [chartType]=\"lineChartType\"\r\n\t\t\t\t\t\t(chartHover)=\"chartHovered($event)\"\r\n\t\t\t\t\t\t(chartClick)=\"chartClicked($event)\"></canvas>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-md-6\" style=\"margin-bottom: 10px\">\r\n\t\t\t\t<table class=\"table table-responsive table-condensed\">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th *ngFor=\"let label of lineChartLabels\">{{label}}</th>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr *ngFor=\"let d of lineChartData\">\r\n\t\t\t\t\t\t<td *ngFor=\"let label of lineChartLabels; let j=index\">{{d &&\r\n\t\t\t\t\t\t\td.data[j]}}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t<button (click)=\"randomize()\">CLICK</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+
+/***/ }),
+
+/***/ 314:
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<div id=\"income-form-modal\" class=\"modal\"\r\n\tstyle=\"width: 75% !important; max-height: 85% !important; overflow-x: hidden !important;\">\r\n\t<div class=\"modal-content\">\r\n\r\n\t\t<div class=\"card row\">\r\n\r\n\t\t\t<div class=\"container\">\r\n\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t<br>\r\n\t\t\t\t\t<div class=\"col s11\">\r\n\t\t\t\t\t\t<h5>Daily Income</h5>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div class=\"col s1 right\">\r\n\t\t\t\t\t\t<a\r\n\t\t\t\t\t\t\tclass=\"modal-action modal-close waves-effect waves-red btn-flat\">X</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t<select id=\"school\" name=\"school\" type=\"text\" [(ngModel)]=\"school\">\r\n\t\t\t\t\t\t\t<option value=\"1\" disabled selected>Choose your School</option>\r\n\t\t\t\t\t\t\t<option value=\"WCHQ\">WCHQ</option>\r\n\t\t\t\t\t\t\t<option value=\"WC\">WC</option>\r\n\t\t\t\t\t\t\t<option value=\"WB\">WB</option>\r\n\t\t\t\t\t\t\t<option value=\"FB\">FB</option>\r\n\t\t\t\t\t\t\t<option value=\"Test\">Test</option>\r\n\t\t\t\t\t\t</select> <label for=\"school\">School</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t<input placeholder=\"\" id=\"datepicker\" name=\"date\" type=\"date\" class=\"datepicker\"\r\n\t\t\t\t\t\t\t[(ngModel)]=\"date\"> <label for=\"date\">Date</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t<ul class=\"collapsible\" data-collapsible=\"accordion\">\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">check</i>Check\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"check_input\" name=\"check_input\" type=\"text\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"currency\" [(ngModel)]=\"check_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(check, '#check_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"check_input\">Input Check Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(check, '#check_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let c of check\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{c}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(check,c)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(check)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">credit_card</i>CreditCard\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"credit_card_input\" name=\"credit_card_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\ttype=\"text\" class=\"currency\" [(ngModel)]=\"credit_card_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(credit_card, '#credit_card_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"credit_card_input\">Input Credit Card Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(credit_card, '#credit_card_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let cc of credit_card\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{cc}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(credit_card,cc)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(credit_card)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">local_atm</i>Cash\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"cash_input\" name=\"cash_input\" type=\"text\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"currency\" [(ngModel)]=\"cash_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(cash, '#cash_input')\"> <label\r\n\t\t\t\t\t\t\t\t\t\t\t\tfor=\"cash_input\">Input Cash Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(cash, '#cash_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let m of cash\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{m}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(cash,m)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(cash)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">restaurant</i>Vending\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"vending_input\" name=\"vending_input\" type=\"text\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"currency\" [(ngModel)]=\"vending_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(vending, '#vending_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"vending_input\">Input Vending Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(vending, '#vending_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let v of vending\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{v}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(vending,v)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(vending)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">contact_mail</i>EZ Payment\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"ez_payment_input\" name=\"ez_payment_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\ttype=\"text\" class=\"currency\" [(ngModel)]=\"ez_payment_input\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(keyup.enter)=\"submitInput(ez_payment, '#ez_payment_input')\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label for=\"ez_payment_input\">Input EZ Payment Item</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"col s12\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"waves-effect waves-light btn\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"submitInput(ez_payment, '#ez_payment_input')\"><i\r\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"material-icons right\">input</i>add</a>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"box\" *ngFor=\"let e of ez_payment\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"chip\">\r\n\t\t\t\t\t\t\t\t\t\t\t{{e}} <i class=\"close material-icons\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t(click)=\"popValue(ez_payment,e)\">close</i>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"divider\"></div>\r\n\t\t\t\t\t\t\t\t\t<br>\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getTotal(ez_payment)}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t<i class=\"material-icons\">format_align_left</i>Summary & Submit\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"collapsible-body\" >\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<table>\r\n\t\t\t\t\t\t\t\t\t<thead>\r\n\t\t\t\t\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Check</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Credit Card</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Cash</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>Vending</th>\r\n\t\t\t\t\t\t\t\t\t\t\t<th>EZ Payment</th>\r\n\t\t\t\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t\t\t\t</thead>\r\n\r\n\t\t\t\t\t\t\t\t\t<tbody>\r\n\t\t\t\t\t\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(check)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(credit_card)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(cash)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(vending)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t\t<td>$ {{getTotal(ez_payment)}}</td>\r\n\t\t\t\t\t\t\t\t\t\t</tr>\r\n\t\t\t\t\t\t\t\t\t</tbody>\r\n\t\t\t\t\t\t\t\t</table>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"col s2\">\r\n\t\t\t\t\t\t\t\t\t<h4>Total:</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s6\">\r\n\t\t\t\t\t\t\t\t\t<h4>$ {{getGrandTotal() | number:2}}</h4>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"col s4\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"right\">\r\n\t\t\t\t\t\t\t\t\t\t<button class=\"modal-action modal-close btn waves-effect waves-light\"\r\n\t\t\t\t\t\t\t\t\t\t\t(click)=\"onSubmit()\" type=\"submit\" name=\"action\">\r\n\t\t\t\t\t\t\t\t\t\t\tSubmit<i class=\"material-icons right\">send</i>\r\n\t\t\t\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ 315:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card col s12\">\n\t<table class=\"striped\">\n\t\t<thead>\n\t\t\t<tr>\n\t\t\t\t<th>Select</th>\n\t\t\t\t<th>School</th>\n\t\t\t\t<th>Date</th>\n\t\t\t\t<th>Check</th>\n\t\t\t\t<th>Cash</th>\n\t\t\t\t<th>Credit Card</th>\n\t\t\t\t<th>Vending</th>\n\t\t\t\t<th>EZ Payment</th>\n\t\t\t\t<th>Total</th>\n\t\t\t</tr>\n\t\t</thead>\n\n\t\t<tbody>\n\n\t\t\t<tr *ngFor=\"let d of getData()\">\n\t\t\t\t<td> <a><i class=\"close material-icons\"\n\t\t\t\t\t(click)=\"deleteData(d.id)\">delete</i></a>\n\t\t\t\t\t<a><i class=\"close material-icons\"\n\t\t\t\t\t(click)=\"editData(d.id,d)\">mode_edit</i></a>\n\t\t\t\t<td>{{d.school}}</td>\n\t\t\t\t<td>{{d.date}}</td>\n\t\t\t\t<td>{{d.check | currency : 'USD' : true : '1.2-2'}}</td>\n\t\t\t\t<td>{{d.cash | currency : 'USD' : true : '1.2-2'}}</td>\n\t\t\t\t<td>{{d.credit_card | currency : 'USD' : true : '1.2-2'}}</td>\n\t\t\t\t<td>{{d.vending | currency : 'USD' : true : '1.2-2'}}</td>\n\t\t\t\t<td>{{d.ez_payment | currency : 'USD' : true : '1.2-2'}}</td>\n\t\t\t\t<td>{{(d.check + d.cash + d.credit_card + d.vending +\n\t\t\t\t\td.ez_payment)| currency : 'USD' : true : '1.2-2'}}\n\t\t\t</tr>\n\t\t</tbody>\n\t</table>\n</div>"
+
+/***/ }),
+
+/***/ 316:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card\" deactivate>\n  <div class=\"card-content row\">\n\n    <div id=\"login_form\" class=\"col s12 center\">\n      <div class=\"input-field\">\n        <input [(ngModel)]=\"username\" id=\"username\" name=\"username\" type=\"text\" class=\"validate\">\n        <label for=\"username\">Username</label>\n      </div>\n\n      <div class=\"input-field\">\n        <input [(ngModel)]=\"password\" id=\"password\" name=\"password\" type=\"password\" class=\"validate\">\n        <label for=\"password\">Password</label>\n      </div>\n\n      <a (click)=\"login()\" class=\"waves-effect waves-light btn\" id=\"submit_button\">login</a>\n    </div>\n\n    <div class=\"progress col s12 center\" id=\"login_loader\">\n      <div class=\"indeterminate\"></div>\n    </div>\n\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 317:
+/***/ (function(module, exports) {
+
+module.exports = "<a class=\"waves-effect waves-light btn\" (click)=\"logout()\">logout</a>"
+
+/***/ }),
+
+/***/ 318:
+/***/ (function(module, exports) {
+
+module.exports = "<nav>\r\n    <div class=\"cyan nav-wrapper\">\r\n      <a href=\"#\" class=\"brand-logo\">TKD Portal</a>\r\n      <ul id=\"nav-mobile\" class=\"button-collapse right hide-on-med-and-down\">\r\n        <li><logout-button></logout-button></li>\r\n      </ul>\r\n    </div>\r\n  </nav>"
+
+/***/ }),
+
+/***/ 344:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(193);
+
+
 /***/ })
 
-},[176]);
+},[344]);
 //# sourceMappingURL=main.bundle.js.map

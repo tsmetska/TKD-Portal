@@ -23,13 +23,13 @@
 					(click)="editData(d.id,d)">mode_edit</i></a>
 				<td>{{d.school}}</td>
 				<td>{{d.date}}</td>
-				<td>{{d.check}}</td>
-				<td>{{d.cash}}</td>
-				<td>{{d.credit_card}}</td>
-				<td>{{d.vending}}</td>
-				<td>{{d.ez_payment}}</td>
-				<td>{{d.check + d.cash + d.credit_card + d.vending +
-					d.ez_payment}}
+				<td>{{d.check | currency : 'USD' : true : '1.2-2'}}</td>
+				<td>{{d.cash | currency : 'USD' : true : '1.2-2'}}</td>
+				<td>{{d.credit_card | currency : 'USD' : true : '1.2-2'}}</td>
+				<td>{{d.vending | currency : 'USD' : true : '1.2-2'}}</td>
+				<td>{{d.ez_payment | currency : 'USD' : true : '1.2-2'}}</td>
+				<td>{{(d.check + d.cash + d.credit_card + d.vending +
+					d.ez_payment)| currency : 'USD' : true : '1.2-2'}}
 			</tr>
 		</tbody>
 	</table>
